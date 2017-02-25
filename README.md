@@ -10,7 +10,7 @@ At a glance:
 - written in Qt, so it should run on all platforms supported by Qt and PlantUML
 - license: GPLv3
 
-PlantUML QEditor is a simple editor written in Qt4 for [PlantUML](http://plantuml.sourceforge.net/index.html).
+PlantUML QEditor is a simple editor written in Qt for [PlantUML](http://plantuml.sourceforge.net/index.html).
 
 Beside Qt, you will need your own copy of *PlantUML*, *java* and *graphviz/dot*. The path to java and plantuml are configurable via the Preferences dialog. Graphviz should be installed so that plantuml can find it (there is no configuration provided for this in Preferences).
 
