@@ -6,8 +6,7 @@
 
 namespace {
 const char* APPLICATION_NAME = "PlantUML Editor";
-const char* ORGANIZATION_NAME   = "Ionutz Borcoman";
-const char* ORGANIZATION_DOMAIN = "borco.net";
+const char* ORGANIZATION_NAME = APPLICATION_NAME;
 
 const char* OPTION_HELP_SHORT = "-h";
 const char* OPTION_HELP_LONG = "--help";
@@ -41,7 +40,6 @@ bool singleInstanceModeRequested(QStringList& options) {
 int main(int argc, char *argv[])
 {
     QCoreApplication::setOrganizationName(ORGANIZATION_NAME);
-    QCoreApplication::setOrganizationDomain(ORGANIZATION_DOMAIN);
     QCoreApplication::setApplicationName(APPLICATION_NAME);
 
     QtSingleApplication a(argc, argv);

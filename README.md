@@ -1,6 +1,6 @@
 # PlantUML QEditor
 
-*Copyright (c) 2012-2017 Ioan Calin Borcoman*
+*Copyright (c) 2012-2017 Ioan Călin Borcoman*
 
 At a glance:
 

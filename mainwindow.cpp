@@ -186,13 +186,13 @@ void MainWindow::about()
 {
     QMessageBox::about(this, tr("About %1").arg(qApp->applicationName()),
                        tr(
-                           "The <b>%1</b> allows simple edit and preview of UML "
-                           "diagrams generated with <u>%2</u>.<br>"
+                           "The <i>%1</i> allows simple edit and preview of UML "
+                           "diagrams generated with <i>%2</i>.<br>"
                            "<br>"
-                           "<u>%2</u> and <u>%3</u> must be installed before "
+                           "%2 and %3 must be installed before "
                            "using the editor.<br>"
                            "<br>"
-                           "<center>Copyright (c) 2012 - Ionutz Borcoman</center>"
+                           "Copyright (c) 2012-2017 - Ioan Călin Borcoman"
                            )
                        .arg(qApp->applicationName()).arg("PlantUML").arg("graphiz")
                        );

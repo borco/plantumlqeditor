@@ -1,6 +1,6 @@
 Author(s):
 
-* [Ioan Calin Borcoman](https://github.com/borco) <iborco@gmail.com>
+* [Ioan Călin Borcoman](https://github.com/borco) <iborco@gmail.com>
 
 Copyright:
 
