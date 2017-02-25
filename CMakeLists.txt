@@ -144,7 +144,7 @@ target_link_libraries(plantumlqeditor
 # installer support
 #-------------------------------------------------------------------------------
 set(CPACK_PACKAGE_NAME "plantuml-qeditor")
-set(CPACK_PACKAGE_VENDOR "Ionutz Borcoman")
+set(CPACK_PACKAGE_VENDOR "Ioan Calin Borcoman")
 set(CPACK_PACKAGE_CONTACT "iborco@gmail.com")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "PlantUML QEditor - a Qt editor for PlantUML")
 set(CPACK_PACKAGE_VERSION_MAJOR "1")
