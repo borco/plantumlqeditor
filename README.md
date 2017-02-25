@@ -22,4 +22,4 @@ If you want to save a specific image, export it via the File menu or using the C
 
 The editor also supports an assistant that allows easy insertion of code snippets into the editor. The assistant is defined by a simple XML and a bunch of icons, one for each snippet.
 
-[[docs/mainwindow.png]]
+![main window](docs/mainwindow.png?raw=true "Main Window")
