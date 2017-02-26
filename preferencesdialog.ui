@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>526</width>
-    <height>516</height>
+    <height>598</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -136,6 +136,30 @@
             </item>
            </layout>
           </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <item>
+            <widget class="QPushButton" name="checkExternalPrograms">
+             <property name="text">
+              <string>Check external programs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QGroupBox" name="cacheGroupBox">

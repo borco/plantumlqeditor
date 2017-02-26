@@ -33,7 +33,8 @@ HEADERS += \
     recentdocuments.h
 
 FORMS += \
-    preferencesdialog.ui
+    preferencesdialog.ui \
+    logdialog.ui
 
 TRANSLATIONS += translations/plantumlqeditor_ru.ts
 

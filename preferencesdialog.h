@@ -2,6 +2,7 @@
 #define PREFERENCESDIALOG_H
 
 #include <QDialog>
+#include <QProcess>
 
 namespace Ui {
 class PreferencesDialog;
@@ -32,8 +33,12 @@ private slots:
     void on_customCacheEdit_textEdited(const QString &);
     void on_customCacheButton_clicked();
     void on_clearCacheButton_clicked();
+    void on_checkExternalPrograms_clicked();
 
 private:
+    void checkExternalPrograms();
+    bool analyzeTestCall(QProcess& process, int& processResult, QStringList& log);
+
     Ui::PreferencesDialog *m_ui;
     FileCache* m_fileCache;
 };

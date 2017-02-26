@@ -187,14 +187,14 @@ void MainWindow::about()
     QMessageBox::about(this, tr("About %1").arg(qApp->applicationName()),
                        tr(
                            "The <b>%1</b> allows simple edit and preview of UML "
-                           "diagrams generated with <u>%2</u>.<br>"
+                           "diagrams generated with <u>%3</u>.<br>"
                            "<br>"
-                           "<u>%2</u> and <u>%3</u> must be installed before "
+                           "<u>%2</u>, <u>%3</u> and <u>%4</u> must be installed before "
                            "using the editor.<br>"
                            "<br>"
-                           "<center>Copyright (c) 2012 - Ionutz Borcoman</center>"
+                           "<center>Copyright (c) 2012 - 2017 Ionutz Borcoman</center>"
                            )
-                       .arg(qApp->applicationName()).arg("PlantUML").arg("graphiz")
+                       .arg(qApp->applicationName()).arg("Java").arg("PlantUML").arg("Graphiz")
                        );
 }
 
@@ -259,8 +259,8 @@ void MainWindow::refresh(bool forced)
     }
 
     if (!m_hasValidPaths) {
-        qDebug() << "please configure paths for plantuml and java. aborting...";
-        statusBar()->showMessage(tr("PlantUML or Java not found. Please set them correctly in the \"Preferences\" dialog!"));
+        qDebug() << "Please configure paths for Java and PlantUML. Aborting...";
+        statusBar()->showMessage(tr("Java and/or PlantUML not found. Please set them correctly in the \"Preferences\" dialog!"));
         return;
     }
 
@@ -293,7 +293,8 @@ void MainWindow::refresh(bool forced)
     arguments
             << "-jar" << m_plantUmlPath
             << QString("-t%1").arg(m_imageFormatNames[m_currentImageFormat]);
-    if (m_useCustomGraphiz) arguments << "-graphizdot" << m_graphizPath;
+    if (m_useCustomGraphiz)
+        arguments << "-graphvizdot" << m_graphizPath;
     arguments << "-charset" << "UTF-8" << "-pipe";
 
     m_lastKey = key;
