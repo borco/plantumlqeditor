@@ -192,7 +192,7 @@ void MainWindow::about()
                            "<u>%2</u>, <u>%3</u> and <u>%4</u> must be installed before "
                            "using the editor.<br>"
                            "<br>"
-                           "<center>Copyright (c) 2012 - 2017 Ionutz Borcoman</center>"
+                           "Copyright (c) 2012-2017 Ionutz Borcoman"
                            )
                        .arg(qApp->applicationName()).arg("Java").arg("PlantUML").arg("Graphiz")
                        );

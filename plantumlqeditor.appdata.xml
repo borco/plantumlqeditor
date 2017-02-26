@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 Damian Wrobel <dwrobel@ertelnet.rybnik.pl> -->
+<component type="desktop">
+  <id>comical.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+ and BSD-3-Clause</project_license>
+  <name>plantumlqeditor</name>
+  <summary>Simple editor for PlantUML</summary>
+  <description>
+    <p>
+      PlantUML QEditor is a simple editor written in Qt5 for PlantUML.
+    </p>
+
+    <p>
+      The editor is quite simple: it monitors the editor for changes, and, if any,
+       runs plantuml to regenerate the image.
+    </p>
+
+    <p>At a glance:</p>
+      <ul>
+        <li>Simple PlantUML editor, with preview</li>
+        <li>Update the diagram while editing</li>
+        <li>Code assistant to insert ready-made code snipets</li>
+        <li>Written in Qt5, so it should run on all platforms supported by Qt5 and PlantUML</li>
+      </ul>
+
+    <p>
+      The editor also supports an assistant that allows easy insertion of code
+      snippets into the editor. The assistant is defined by a simple XML and a bunch
+      of icons, one for each snippet.
+    </p>
+
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/borco/plantumlqeditor/raw/master/docs/mainwindow.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/borco/plantumlqeditor/raw/master/docs/mainwindow--sequence-assistant.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/borco/plantumlqeditor/raw/master/docs/propertiesdialog.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://sourceforge.net/projects/plantumlqeditor/</url>
+  <update_contact>dwrobel_at_ertelnet.rybnik.pl</update_contact>
+</component>
+
