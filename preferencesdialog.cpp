@@ -1,5 +1,6 @@
 #include "preferencesdialog.h"
 #include "ui_preferencesdialog.h"
+#include "ui_logdialog.h"
 
 #include "utils.h"
 #include "filecache.h"
@@ -7,6 +8,8 @@
 #include <QFileDialog>
 #include <QSettings>
 #include <QDesktopServices>
+#include <QMessageBox>
+#include <QProcess>
 
 PreferencesDialog::PreferencesDialog(FileCache* file_cache, QWidget *parent)
     : QDialog(parent)
@@ -229,4 +232,93 @@ void PreferencesDialog::on_clearCacheButton_clicked()
         m_fileCache->clearFromDisk();
         m_ui->cacheCurrentSizeLabel->setText(cacheSizeToString(m_fileCache->totalCost()));
     }
+}
+
+void PreferencesDialog::on_checkExternalPrograms_clicked()
+{
+    checkExternalPrograms();
+}
+
+void PreferencesDialog::checkExternalPrograms()
+{
+    QStringList checkLog;
+
+    // Get external programs' current paths.
+    QString javaPath,
+            plantUmlPath;
+
+    if (m_ui->customJavaRadio->isChecked())
+        javaPath = m_ui->customJavaPathEdit->text();
+    else
+        javaPath = SETTINGS_CUSTOM_JAVA_PATH_DEFAULT;
+
+    if (m_ui->customPlantUmlRadio->isChecked())
+        plantUmlPath = m_ui->customPlantUmlEdit->text();
+    else
+        plantUmlPath = SETTINGS_CUSTOM_PLANTUML_PATH_DEFAULT;
+
+    QProcess tester;
+    int      testerResult;
+    QStringList arguments;
+    bool     isJavaOk,
+             isPlantUmlOk;
+
+    checkLog.clear();
+
+    checkLog.append(tr("Testing Java executable:"));
+
+    if (!QFileInfo(javaPath).exists()) {
+        checkLog.append(tr("Java executable is not found"));
+    } else {
+        arguments << "-version";
+        testerResult = tester.execute(javaPath, arguments);
+        isJavaOk = analyzeTestCall(tester, testerResult, checkLog);
+    }
+
+    if (isJavaOk) {
+        checkLog.append("\n");
+        checkLog.append(tr("Testing PlantUML executable:"));
+
+        if (!QFileInfo(plantUmlPath).exists()) {
+            checkLog.append(tr("PlantUML executable is not found"));
+        } else {
+            arguments.clear();
+            arguments << "-jar" << plantUmlPath << "-testdot";
+            testerResult = tester.execute(javaPath, arguments);
+            isPlantUmlOk = analyzeTestCall(tester, testerResult, checkLog);
+        }
+    }
+
+    if (!checkLog.isEmpty()) {
+        QDialog logDialog(this);
+        Ui::LogDialog ui;
+
+        ui.setupUi(&logDialog);
+        ui.logViewer->setPlainText(checkLog.join("\n"));
+        logDialog.exec();
+
+        // Simple dialog (It was left for subsequent experiments)
+        //QMessageBox::information(this, tr("Results"), m_checkLog.join("\n"));
+    }
+}
+
+bool PreferencesDialog::analyzeTestCall(QProcess& process, int &processResult, QStringList &log)
+{
+    bool rc;
+
+    switch (processResult){
+    case -2:
+    case -1:
+        log.append(tr("Test execution is with errors:"));
+        log.append(process.errorString());
+        rc = false;
+        break;
+
+    default:
+        log.append(tr("Test execution is w/o errors"));
+        rc = true;
+        break;
+    }
+
+    return rc;
 }
