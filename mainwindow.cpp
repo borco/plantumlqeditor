@@ -189,12 +189,15 @@ void MainWindow::about()
                            "The <i>%1</i> allows simple edit and preview of UML "
                            "diagrams generated with <i>%2</i>.<br>"
                            "<br>"
-                           "%2 and %3 must be installed before "
+                           "%2, %3 and %4 must be installed before "
                            "using the editor.<br>"
                            "<br>"
                            "Copyright (c) 2012-2017 - Ioan Călin Borcoman"
                            )
-                       .arg(qApp->applicationName()).arg("PlantUML").arg("graphiz")
+                       .arg(qApp->applicationName())
+                       .arg("PlantUML")
+                       .arg("Java")
+                       .arg("Graphiz")
                        );
 }
 
@@ -259,8 +262,8 @@ void MainWindow::refresh(bool forced)
     }
 
     if (!m_hasValidPaths) {
-        qDebug() << "please configure paths for plantuml and java. aborting...";
-        statusBar()->showMessage(tr("PlantUML or Java not found. Please set them correctly in the \"Preferences\" dialog!"));
+        qDebug() << "Please configure paths for Java and PlantUML. Aborting...";
+        statusBar()->showMessage(tr("Java and/or PlantUML not found. Please set them correctly in the \"Preferences\" dialog!"));
         return;
     }
 
@@ -293,7 +296,8 @@ void MainWindow::refresh(bool forced)
     arguments
             << "-jar" << m_plantUmlPath
             << QString("-t%1").arg(m_imageFormatNames[m_currentImageFormat]);
-    if (m_useCustomGraphiz) arguments << "-graphizdot" << m_graphizPath;
+    if (m_useCustomGraphiz)
+        arguments << "-graphvizdot" << m_graphizPath;
     arguments << "-charset" << "UTF-8" << "-pipe";
 
     m_lastKey = key;
