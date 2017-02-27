@@ -6,7 +6,6 @@
 #include "filecache.h"
 #include "settingsconstants.h"
 
-#include <QDebug>
 #include <QFileDialog>
 #include <QSettings>
 #include <QDesktopServices>

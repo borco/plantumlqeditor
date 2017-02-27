@@ -2,7 +2,6 @@
 #define PREFERENCESDIALOG_H
 
 #include <QDialog>
-#include <QProcess>
 
 namespace Ui {
 class PreferencesDialog;
