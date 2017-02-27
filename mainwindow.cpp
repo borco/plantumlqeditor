@@ -189,12 +189,15 @@ void MainWindow::about()
                            "The <i>%1</i> allows simple edit and preview of UML "
                            "diagrams generated with <i>%2</i>.<br>"
                            "<br>"
-                           "%2 and %3 must be installed before "
+                           "%2, %3 and %4 must be installed before "
                            "using the editor.<br>"
                            "<br>"
                            "Copyright (c) 2012-2017 - Ioan Călin Borcoman"
                            )
-                       .arg(qApp->applicationName()).arg("Java").arg("PlantUML").arg("Graphiz")
+                       .arg(qApp->applicationName())
+                       .arg("PlantUML")
+                       .arg("Java")
+                       .arg("Graphiz")
                        );
 }
 
