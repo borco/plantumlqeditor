@@ -5,6 +5,8 @@
 #include "utils.h"
 #include "filecache.h"
 #include "settingsconstants.h"
+
+#include <QDebug>
 #include <QFileDialog>
 #include <QSettings>
 #include <QDesktopServices>
@@ -31,7 +33,16 @@ PreferencesDialog::PreferencesDialog(FileCache* file_cache, QWidget *parent)
     if (m_fileCache) {
         m_ui->cacheCurrentSizeLabel->setText(cacheSizeToString(m_fileCache->totalCost()));
     }
+
     connect(this, SIGNAL(rejected()), this, SLOT(onRejected()));
+    connect(m_ui->tabWidget, SIGNAL(currentChanged(int)), this, SLOT(onCurrentTabChanged()));
+    onCurrentTabChanged();
+
+#if QT_VERSION > QT_VERSION_CHECK(5,2,0)
+    QSizePolicy policy = m_ui->checkExternalPrograms->sizePolicy();
+    policy.setRetainSizeWhenHidden(true);
+    m_ui->checkExternalPrograms->setSizePolicy(policy);
+#endif
 }
 
 PreferencesDialog::~PreferencesDialog()
@@ -72,7 +83,7 @@ void PreferencesDialog::readSettings()
     else
         m_ui->defaultCacheRadio->setChecked(true);
     m_ui->customCacheEdit->setText(settings.value(SETTINGS_CUSTOM_CACHE_PATH).toString());
-    m_ui->cacheMaxSize->setValue(settings.value(SETTINGS_CACHE_MAX_SIZE, SETTINGS_CACHE_MAX_SIZE_DEFAULT).toInt() / CACHE_SCALE);
+    m_ui->cacheMaxSize->setValue(int(settings.value(SETTINGS_CACHE_MAX_SIZE, SETTINGS_CACHE_MAX_SIZE_DEFAULT).toInt() / CACHE_SCALE));
 
     settings.endGroup();
 
@@ -239,86 +250,106 @@ void PreferencesDialog::on_checkExternalPrograms_clicked()
     checkExternalPrograms();
 }
 
+void PreferencesDialog::onCurrentTabChanged()
+{
+    m_ui->checkExternalPrograms->setVisible(m_ui->tabWidget->currentWidget() == m_ui->generalTab);
+}
+
 void PreferencesDialog::checkExternalPrograms()
 {
-    QStringList checkLog;
-
     // Get external programs' current paths.
-    QString javaPath,
-            plantUmlPath;
+    QString javaPath = m_ui->customJavaRadio->isChecked()
+            ? m_ui->customJavaPathEdit->text()
+            : SETTINGS_CUSTOM_JAVA_PATH_DEFAULT;
 
-    if (m_ui->customJavaRadio->isChecked())
-        javaPath = m_ui->customJavaPathEdit->text();
-    else
-        javaPath = SETTINGS_CUSTOM_JAVA_PATH_DEFAULT;
+    QString plantUmlPath = m_ui->customPlantUmlRadio->isChecked()
+            ? m_ui->customPlantUmlEdit->text()
+            : SETTINGS_CUSTOM_PLANTUML_PATH_DEFAULT;
 
-    if (m_ui->customPlantUmlRadio->isChecked())
-        plantUmlPath = m_ui->customPlantUmlEdit->text();
-    else
-        plantUmlPath = SETTINGS_CUSTOM_PLANTUML_PATH_DEFAULT;
+    QString graphizPath = m_ui->customGraphizRadio->isChecked()
+            ? m_ui->customGraphizEdit->text()
+            : SETTINGS_CUSTOM_GRAPHIZ_PATH_DEFAULT;
 
-    QProcess tester;
-    int      testerResult;
-    QStringList arguments;
-    bool     isJavaOk,
-             isPlantUmlOk;
+    QString invalidPathLog = ("<font color=\"red\">invalid path</font>");
 
-    checkLog.clear();
+    QString log;
+    log += tr("Testing Java executable <tt>%1</tt>: ").arg(javaPath);
 
-    checkLog.append(tr("Testing Java executable:"));
-
+    bool isJavaOk = false;
     if (!QFileInfo(javaPath).exists()) {
-        checkLog.append(tr("Java executable is not found"));
+        log += invalidPathLog;
     } else {
-        arguments << "-version";
-        testerResult = tester.execute(javaPath, arguments);
-        isJavaOk = analyzeTestCall(tester, testerResult, checkLog);
+        isJavaOk = checkExternalProgram(javaPath, QStringList() << "-version", log);
     }
 
-    if (isJavaOk) {
-        checkLog.append("\n");
-        checkLog.append(tr("Testing PlantUML executable:"));
+    log.append("<p>");
+    log.append(tr("Testing graphiz/dot <tt>%1</tt>: ").arg(graphizPath));
+    bool isGraphizOk = false;
+    if (!QFileInfo(graphizPath).exists()) {
+        log += invalidPathLog;
+    } else {
+        isGraphizOk = checkExternalProgram(graphizPath, QStringList() << "-V", log, ".*dot - graphviz version.*");
+    }
+
+    if (isJavaOk && isGraphizOk) {
+        log.append("<p>");
+        log.append(tr("Testing PlantUML jar <tt>%1</tt>: ").arg(plantUmlPath));
 
         if (!QFileInfo(plantUmlPath).exists()) {
-            checkLog.append(tr("PlantUML executable is not found"));
+            log += invalidPathLog;
         } else {
-            arguments.clear();
-            arguments << "-jar" << plantUmlPath << "-testdot";
-            testerResult = tester.execute(javaPath, arguments);
-            isPlantUmlOk = analyzeTestCall(tester, testerResult, checkLog);
+            checkExternalProgram(javaPath,
+                                 QStringList()
+                                 << "-jar"
+                                 << plantUmlPath
+                                 << "-graphvizdot"
+                                 << graphizPath
+                                 << "-testdot",
+                                 log,
+                                 ".*Installation seems OK. File generation OK$");
         }
     }
 
-    if (!checkLog.isEmpty()) {
+
+    if (!log.isEmpty()) {
         QDialog logDialog(this);
         Ui::LogDialog ui;
 
         ui.setupUi(&logDialog);
-        ui.logViewer->setPlainText(checkLog.join("\n"));
+        ui.logViewer->setText(log);
         logDialog.exec();
-
-        // Simple dialog (It was left for subsequent experiments)
-        //QMessageBox::information(this, tr("Results"), m_checkLog.join("\n"));
     }
 }
 
-bool PreferencesDialog::analyzeTestCall(QProcess& process, int &processResult, QStringList &log)
+bool PreferencesDialog::checkExternalProgram(const QString &path, const QStringList &arguments, QString &log, const QString& validator)
 {
-    bool rc;
+    QProcess process;
+    process.start(path, arguments);
+    process.waitForFinished();
 
-    switch (processResult){
-    case -2:
-    case -1:
-        log.append(tr("Test execution is with errors:"));
-        log.append(process.errorString());
-        rc = false;
-        break;
+    QString output = process.readAllStandardOutput() + process.readAllStandardError();
 
-    default:
-        log.append(tr("Test execution is w/o errors"));
-        rc = true;
-        break;
+    if (process.exitCode() == 0) {
+        bool validationOk = true;
+
+        if (!validator.isEmpty()) {
+            QRegExp exp(validator);
+            QString outputCopy(output);
+            outputCopy = outputCopy.replace("\n", " ").trimmed();
+            if (!exp.exactMatch(outputCopy)) {
+                validationOk = false;
+            }
+        }
+
+        if (validationOk) {
+            log += tr("<b>OK</b>");
+            return true;
+        }
     }
 
-    return rc;
+    log += tr("<font color=\"red\">FAILED");
+    log += "<pre>";
+    log += output;
+    log += "</pre></font>";
+    return false;
 }

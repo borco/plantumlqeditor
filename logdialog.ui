@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>448</width>
+    <width>743</width>
     <height>233</height>
    </rect>
   </property>
@@ -20,7 +20,7 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPlainTextEdit" name="logViewer">
+      <widget class="QTextEdit" name="logViewer">
        <property name="readOnly">
         <bool>true</bool>
        </property>
