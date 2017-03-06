@@ -769,11 +769,14 @@ void MainWindow::exportImage(const QString &name)
         return;
     }
 
+	QFileInfo finfo(m_documentPath);
+	const QString docPathWithBaseFilename = finfo.absolutePath() + QDir::separator() + finfo.baseName();
+
     QString tmp_name = name;
     if (tmp_name.isEmpty()) {
         tmp_name = QFileDialog::getSaveFileName(this,
                                                 tr("Select where to export the image"),
-                                                m_documentPath,
+												docPathWithBaseFilename,
                                                 "Image (*.svg *.png);; All Files (*.*)"
                                                 );
         if (tmp_name.isEmpty()) {
