@@ -11,10 +11,13 @@ set (LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/)
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-option (ENABLE_QT5 "Use Qt5 instead of Qt4" OFF)
+option (ENABLE_QT5 "Use Qt5 instead of Qt4" ON)
 if (${ENABLE_QT5})
-    find_package(Qt5Core)
-    find_package(Qt5Widgets)
+    find_package(Qt5Core REQUIRED)
+    find_package(Qt5Widgets REQUIRED)
+	find_package(Qt5Gui REQUIRED)
+	find_package(Qt5Svg REQUIRED)
+	set(QT_QTMAIN_LIBRARY Qt5::WinMain)
 else()
     set (QT_QMAKE_EXECUTABLE $ENV{QT_QMAKE_EXECUTABLE})
     find_package (Qt4 4.8 REQUIRED)
@@ -124,22 +127,41 @@ endif()
 
 include_directories(${QT_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 
-add_executable(plantumlqeditor
-    ${SOURCES_APP}
-    ${SOURCES_FORMS_APP}
-    ${SOURCES_QRC_APP}
-    ${EXTRA_HEADERS_APP}
-)
+if (WIN32)
+	add_executable(plantumlqeditor WIN32
+		${SOURCES_APP}
+		${SOURCES_FORMS_APP}
+		${SOURCES_QRC_APP}
+		${EXTRA_HEADERS_APP}
+	)
+else()
+	add_executable(plantumlqeditor
+		${SOURCES_APP}
+		${SOURCES_FORMS_APP}
+		${SOURCES_QRC_APP}
+		${EXTRA_HEADERS_APP}
+	)
+endif()
 
 if (${ENABLE_QT5})
     qt5_use_modules(plantumlqeditor Core Widgets Gui Svg)
 endif()
 
-target_link_libraries(plantumlqeditor
-    ${QT_QTSVG_LIBRARY}
-    plantumlqeditorlib
-    qtsingleapplicationlib
-)
+if (WIN32)
+	target_link_libraries(plantumlqeditor
+		${QT_QTMAIN_LIBRARY}
+		${QT_QTSVG_LIBRARY}
+		plantumlqeditorlib
+		qtsingleapplicationlib
+	)
+	set_target_properties (plantumlqeditor PROPERTIES WIN32_EXECUTABLE TRUE)
+else()
+	target_link_libraries(plantumlqeditor
+		${QT_QTSVG_LIBRARY}
+		plantumlqeditorlib
+		qtsingleapplicationlib
+	)
+endif()
 
 #-------------------------------------------------------------------------------
 # installer support
