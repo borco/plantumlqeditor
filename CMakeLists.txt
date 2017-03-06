@@ -101,6 +101,7 @@ set (EXTRA_HEADERS_APP
 
 set(FORMS_APP
     preferencesdialog.ui
+    logdialog.ui
 )
 
 if (${ENABLE_QT5})
