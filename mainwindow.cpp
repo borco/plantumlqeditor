@@ -357,20 +357,44 @@ void MainWindow::refreshFinished()
 {
     m_cachedImage = m_process->readAll();
     m_imageWidget->load(m_cachedImage);
+    bool isOk = false;
+
+    if (m_process->exitStatus() == QProcess::NormalExit)
+    {
+        QString perr = m_process->readAllStandardError();
+        if (perr.length() == 0)
+        {
+            isOk = true;
+        }
+        else
+        {
+            qDebug("Error during plantuml run: %s", qUtf8Printable(perr));
+            statusBar()->showMessage(tr("Refresh failed, see debug log."), STATUSBAR_TIMEOUT);
+        }
+    }
+    else
+    {
+        qDebug("PlantUML process did not exit normally.");
+        statusBar()->showMessage(tr("Refresh failed, see debug log."), STATUSBAR_TIMEOUT);
+    }
+
     m_process->deleteLater();
     m_process = 0;
 
-    if (m_useCache && m_cache) {
-        m_cache->addItem(m_cachedImage, m_lastKey,
-                         [](const QString& path,
-                            const QString& key,
-                            int cost,
-                            const QDateTime& date_time,
-                            QObject* parent
-                            ) { return new FileCacheItem(path, key, cost, date_time, parent); });
-        updateCacheSizeInfo();
+    if (isOk)
+    {
+        if (m_useCache && m_cache) {
+            m_cache->addItem(m_cachedImage, m_lastKey,
+                             [](const QString& path,
+                                     const QString& key,
+                                     int cost,
+                                     const QDateTime& date_time,
+                                     QObject* parent
+                             ) { return new FileCacheItem(path, key, cost, date_time, parent); });
+            updateCacheSizeInfo();
+        }
+        statusBar()->showMessage(tr("Refreshed"), STATUSBAR_TIMEOUT);
     }
-    statusBar()->showMessage(tr("Refreshed"), STATUSBAR_TIMEOUT);
 }
 
 void MainWindow::changeImageFormat()
