@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="156px" preserveAspectRatio="none" style="width:121px;height:156px;" version="1.1" viewBox="0 0 121 156" width="121px" zoomAndPan="magnify"><defs><filter height="300%" id="f8s3viphci3y7" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="33" x2="33" y1="38.2969" y2="116.5625"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="91" x2="91" y1="38.2969" y2="116.5625"/><rect fill="#FEFECE" filter="url(#f8s3viphci3y7)" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="46" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="32" x="15" y="22.9951">Alice</text><rect fill="#FEFECE" filter="url(#f8s3viphci3y7)" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="46" x="8" y="115.5625"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="32" x="15" y="135.5576">Alice</text><rect fill="#FEFECE" filter="url(#f8s3viphci3y7)" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="68" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="75" y="22.9951">Bob</text><rect fill="#FEFECE" filter="url(#f8s3viphci3y7)" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="68" y="115.5625"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="75" y="135.5576">Bob</text><polygon fill="#A80036" points="79,65.4297,89,69.4297,79,73.4297,83,69.4297" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="33" x2="85" y1="69.4297" y2="69.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="40" y="64.3638">Hello</text><polygon fill="#A80036" points="44,94.5625,34,98.5625,44,102.5625,40,98.5625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="38" x2="90" y1="98.5625" y2="98.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="15" x="50" y="93.4966">ok</text><!--
+@startuml
+
+Alice ->Bob  : Hello
+Bob ->Alice  : ok
+    @enduml
+
+PlantUML version 1.2019.01(Sat Feb 09 16:32:04 CET 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.1+13-Ubuntu-3ubuntu3.18.10.1
+Operating System: Linux
+OS Version: 4.18.0-16-generic
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

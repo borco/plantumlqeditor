@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="228px" preserveAspectRatio="none" style="width:523px;height:228px;" version="1.1" viewBox="0 0 523 228" width="523px" zoomAndPan="magnify"><defs><filter height="300%" id="fzgo6bk5ibblh" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="33" x2="33" y1="38.2969" y2="188.2266"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="122" x2="122" y1="38.2969" y2="188.2266"/><rect fill="#FEFECE" filter="url(#fzgo6bk5ibblh)" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="46" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="32" x="15" y="22.9951">Alice</text><rect fill="#FEFECE" filter="url(#fzgo6bk5ibblh)" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="46" x="8" y="187.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="32" x="15" y="207.2217">Alice</text><rect fill="#FEFECE" filter="url(#fzgo6bk5ibblh)" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="99" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="106" y="22.9951">Bob</text><rect fill="#FEFECE" filter="url(#fzgo6bk5ibblh)" height="30.2969" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="99" y="187.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="106" y="207.2217">Bob</text><polygon fill="#A80036" points="110,115.8281,120,119.8281,110,123.8281,114,119.8281" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="33" x2="116" y1="119.8281" y2="119.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="46" x="40" y="114.7622">Testing</text><image height="10" width="15" x="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAKCAIAAADkeZOuAAAAPElEQVR4XmNgIBX8////3bt3d+/ePXPmzO7du1etWjVz5syOjo7y8vK0tLTQ0FAXFxdjY+NR1VRSTTwAAPnCunnKbysKAAAAAElFTkSuQmCC" y="107.8281"/><path d="M127,53.2969 L127,168.2969 L511,168.2969 L511,63.2969 L501,53.2969 L127,53.2969 " fill="#FBFB77" filter="url(#fzgo6bk5ibblh)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M501,53.2969 L501,63.2969 L511,63.2969 L501,53.2969 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="340" x="133" y="70.3638">To encode sprite, you can use the command line like:</text><text fill="#000000" font-family="sans-serif" font-size="13" font-style="italic" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="349" x="133" y="85.4966">java -jar plantuml.jar -encodesprite 16z foo.png</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="336" x="133" y="100.6294">where foo.png if the image file you want to use (it will</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="363" x="133" y="115.7622">be converted to gray automatically). After -encodesprite,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="332" x="133" y="130.895">you have to specify a format: 4, 8, 16, 4z, 8z or 16z.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="355" x="133" y="146.0278">The number indicates the gray level and the optionnal z</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="316" x="133" y="161.1606">is used to enable compression in sprite definition.</text><!--
+@startuml
+sprite $foo1 {
+FFFFFFFFFFFFFFF
+F0123456789ABCF
+F0123456789ABCF
+F0123456789ABCF
+F0123456789ABCF
+F0123456789ABCF
+F0123456789ABCF
+F0123456789ABCF
+F0123456789ABCF
+FFFFFFFFFFFFFFF
+}
+Alice -> Bob : Testing <$foo1>
+note right
+To encode sprite, you can use the command line like:
+<i><b>java -jar plantuml.jar -encodesprite 16z foo.png</b></i>
+where foo.png if the image file you want to use (it will
+be converted to gray automatically). After -encodesprite,
+you have to specify a format: 4, 8, 16, 4z, 8z or 16z.
+The number indicates the gray level and the optionnal z
+is used to enable compression in sprite definition.
+end note
+    @enduml
+
+PlantUML version 1.2019.01(Sat Feb 09 16:32:04 CET 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.1+13-Ubuntu-3ubuntu3.18.10.1
+Operating System: Linux
+OS Version: 4.18.0-16-generic
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

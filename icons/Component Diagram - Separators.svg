@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="326px" preserveAspectRatio="none" style="width:469px;height:326px;" version="1.1" viewBox="0 0 469 326" width="469px" zoomAndPan="magnify"><defs><filter height="300%" id="fp1q6olhshr5a" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--entity folder--><polygon fill="#FEFECE" filter="url(#fp1q6olhshr5a)" points="6,8,52,8,59,29,204,29,204,136.4844,6,136.4844,6,8" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="6" x2="59" y1="29" y2="29"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="16" y="48.9951">This is an</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="45" x="85" y="48.9951">folder</text><line style="stroke: #000000; stroke-width: 1.0;" x1="7" x2="203" y1="52.2969" y2="52.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="156" x="22" y="69.292">You can use separator</text><line style="stroke: #000000; stroke-width: 1.0;" x1="7" x2="203" y1="76.5938" y2="76.5938"/><line style="stroke: #000000; stroke-width: 1.0;" x1="7" x2="203" y1="78.5938" y2="78.5938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="22" y="93.5889">of different kind</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="7" x2="203" y1="100.8906" y2="100.8906"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="22" y="117.8857">and style</text><!--entity node--><polygon fill="#FEFECE" filter="url(#fp1q6olhshr5a)" points="239,22.5,249,12.5,447,12.5,447,121.6875,437,131.6875,239,131.6875,239,22.5" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="437" x2="446" y1="22.5" y2="13.5"/><line style="stroke: #000000; stroke-width: 1.5;" x1="239" x2="437" y1="22.5" y2="22.5"/><line style="stroke: #000000; stroke-width: 1.5;" x1="437" x2="437" y1="22.5" y2="131.6875"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="254" y="45.4951">This is a</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="40" x="314" y="45.4951">node</text><line style="stroke: #000000; stroke-width: 1.0;" x1="239" x2="437" y1="48.7969" y2="48.7969"/><line style="stroke: #000000; stroke-width: 1.0;" x1="437" x2="447" y1="48.7969" y2="38.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="156" x="260" y="65.792">You can use separator</text><line style="stroke: #000000; stroke-width: 1.0;" x1="239" x2="437" y1="73.0938" y2="73.0938"/><line style="stroke: #000000; stroke-width: 1.0;" x1="437" x2="447" y1="73.0938" y2="63.0938"/><line style="stroke: #000000; stroke-width: 1.0;" x1="239" x2="437" y1="75.0938" y2="75.0938"/><line style="stroke: #000000; stroke-width: 1.0;" x1="437" x2="447" y1="75.0938" y2="65.0938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="260" y="90.0889">of different kind</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="239" x2="437" y1="97.3906" y2="97.3906"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="437" x2="447" y1="97.3906" y2="87.3906"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="260" y="114.3857">and style</text><!--entity database--><path d="M11,206 C11,196 105,196 105,196 C105,196 199,196 199,206 L199,304.1875 C199,314.1875 105,314.1875 105,314.1875 C105,314.1875 11,314.1875 11,304.1875 L11,206 " fill="#FEFECE" filter="url(#fp1q6olhshr5a)" style="stroke: #000000; stroke-width: 1.5;"/><path d="M11,206 C11,216 105,216 105,216 C105,216 199,216 199,206 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="21" y="232.9951">This is a</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="81" y="232.9951">database</text><path d="M11,231.2969 C11,241.2969 105,241.2969 105,241.2969 C105,241.2969 199,241.2969 199,231.2969 " fill="none" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="156" x="27" y="253.292">You can use separator</text><path d="M11,255.5938 C11,265.5938 105,265.5938 105,265.5938 C105,265.5938 199,265.5938 199,255.5938 " fill="none" style="stroke: #000000; stroke-width: 1.0;"/><path d="M11,257.5938 C11,267.5938 105,267.5938 105,267.5938 C105,267.5938 199,267.5938 199,257.5938 " fill="none" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="27" y="277.5889">of different kind</text><path d="M11,279.8906 C11,289.8906 105,289.8906 105,289.8906 C105,289.8906 199,289.8906 199,279.8906 " fill="none" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="27" y="301.8857">and style</text><ellipse cx="331.8163" cy="254.8359" fill="#FEFECE" filter="url(#fp1q6olhshr5a)" rx="97.8163" ry="53.3359" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="268.8163" y="230.0148">This is a</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="66" x="328.8163" y="230.0148">usecase</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="243.315" x2="420.3176" y1="233.3165" y2="233.3165"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="156" x="253.8163" y="250.3117">You can use separator</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="235.1327" x2="428.4998" y1="257.6134" y2="257.6134"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="235.3932" x2="428.2394" y1="259.6134" y2="259.6134"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="278.3163" y="274.6085">of different kind</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="248.5397" x2="415.0929" y1="281.9103" y2="281.9103"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="300.8163" y="298.9054">and style</text><!--link folder to node--><!--link folder to database--><!--link database to usecase--><!--
+@startuml
+folder folder [
+This is an <b>folder
+- - - -
+You can use separator
+====
+of different kind
+....
+and style
+]
+
+node node [
+This is a <b>node
+- - - -
+You can use separator
+====
+of different kind
+....
+and style
+]
+
+database database [
+This is a <b>database
+- - - -
+You can use separator
+====
+of different kind
+....
+and style
+]
+
+usecase usecase [
+This is a <b>usecase
+- - - -
+You can use separator
+====
+of different kind
+....
+and style
+]
+	@enduml
+
+PlantUML version 1.2019.01(Sat Feb 09 16:32:04 CET 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.1+13-Ubuntu-3ubuntu3.18.10.1
+Operating System: Linux
+OS Version: 4.18.0-16-generic
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

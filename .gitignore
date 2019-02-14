@@ -1,3 +1,9 @@
 *.user
 *-build-*
 *.qm
+*.o
+*.cpp
+*.h
+.qmake.stash
+plantumlqeditor
+Makefile

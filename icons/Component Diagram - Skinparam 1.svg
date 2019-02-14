@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="182px" preserveAspectRatio="none" style="width:318px;height:182px;" version="1.1" viewBox="0 0 318 182" width="318px" zoomAndPan="magnify"><defs><filter height="300%" id="f1uqrn9qrsq7ud" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--entity DA--><ellipse cx="49" cy="26" fill="#FEFECE" filter="url(#f1uqrn9qrsq7ud)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="86" x="6" y="55.9951">Data Access</text><!--entity First Component--><rect fill="#FFD700" filter="url(#f1uqrn9qrsq7ud)" height="35.6" style="stroke: #000000; stroke-width: 1.5;" width="140" x="93" y="8"/><rect fill="#FFD700" height="5" style="stroke: #000000; stroke-width: 1.5;" width="10" x="88" y="13"/><rect fill="#FFD700" height="5" style="stroke: #000000; stroke-width: 1.5;" width="10" x="88" y="33.6"/><text fill="#000000" font-family="Courier" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="120" x="103" y="29.856">First Component</text><!--entity HTTP--><ellipse cx="163" cy="139" fill="#FEFECE" filter="url(#f1uqrn9qrsq7ud)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="144.5" y="168.9951">HTTP</text><!--entity Web Server--><rect fill="#FFD700" filter="url(#f1uqrn9qrsq7ud)" height="35.6" style="stroke: #000000; stroke-width: 1.5;" width="100" x="207" y="121"/><rect fill="#FFD700" height="5" style="stroke: #000000; stroke-width: 1.5;" width="10" x="202" y="126"/><rect fill="#FFD700" height="5" style="stroke: #000000; stroke-width: 1.5;" width="10" x="202" y="146.6"/><text fill="#000000" font-family="Courier" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="80" x="217" y="142.856">Web Server</text><!--link DA to First Component--><path d="M58.3516,26 C69.7975,26 81.2434,26 92.6893,26 " fill="none" id="DA-First Component" style="stroke: #FF6655; stroke-width: 1.0;"/><!--link First Component to HTTP--><path d="M163,44.1554 C163,66.6052 163,104.3477 163,124.7977 " fill="none" id="First Component-HTTP" style="stroke: #FF6655; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#FF6655" points="163,129.8425,167,120.8425,163,124.8425,159,120.8425,163,129.8425" style="stroke: #FF6655; stroke-width: 1.0;"/><text fill="#777777" font-family="Impact" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="20" x="164" y="88.1143">use</text><!--link HTTP to Web Server--><path d="M172.1797,139 C183.7762,139 195.3727,139 206.9693,139 " fill="none" id="HTTP-Web Server" style="stroke: #FF6655; stroke-width: 1.0;"/><!--
+@startuml
+		skinparam component {
+        FontSize 13
+        InterfaceBackgroundColor RosyBrown
+        InterfaceBorderColor orange
+        BackgroundColor<<Apache>> Red
+        BorderColor<<Apache>> #FF6655
+        FontName Courier
+        BorderColor black
+        BackgroundColor gold
+        ArrowFontName Impact
+        ArrowColor #FF6655
+        ArrowFontColor #777777
+    }
+
+    () "Data Access" as DA
+
+    DA - [First Component]
+    [First Component] ..> () HTTP : use
+    HTTP - [Web Server] << Apache >>
+    @enduml
+
+PlantUML version 1.2019.01(Sat Feb 09 16:32:04 CET 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.1+13-Ubuntu-3ubuntu3.18.10.1
+Operating System: Linux
+OS Version: 4.18.0-16-generic
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

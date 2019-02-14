@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="363px" preserveAspectRatio="none" style="width:489px;height:363px;" version="1.1" viewBox="0 0 489 363" width="489px" zoomAndPan="magnify"><defs><filter height="300%" id="fy64nd6fcfvpd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="101.5" cy="18" fill="#000000" filter="url(#fy64nd6fcfvpd)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><path d="M232,207.5 L232,216 L197.3633,220 L232,224 L232,232.6328 A0,0 0 0 0 232,232.6328 L477,232.6328 A0,0 0 0 0 477,232.6328 L477,217.5 L467,207.5 L232,207.5 A0,0 0 0 0 232,207.5 " fill="#FBFB77" filter="url(#fy64nd6fcfvpd)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M467,207.5 L467,217.5 L477,217.5 L467,207.5 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="224" x="238" y="224.5669">This is a note on a composite state</text><rect fill="#FEFECE" filter="url(#fy64nd6fcfvpd)" height="264.2969" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="191" x="6" y="88"/><rect fill="#FFFFFF" height="232" rx="12.5" ry="12.5" style="stroke: #FFFFFF; stroke-width: 1.0;" width="185" x="9" y="117.2969"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="6" x2="197" y1="114.2969" y2="114.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="130" x="36.5" y="105.9951">Not Shooting State</text><rect fill="#FEFECE" filter="url(#fy64nd6fcfvpd)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="88" x="44.5" y="184.2969"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="44.5" x2="132.5" y1="210.5938" y2="210.5938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="54.5" y="202.292">Idle mode</text><rect fill="#FEFECE" filter="url(#fy64nd6fcfvpd)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="143" x="17" y="287.2969"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="17" x2="160" y1="313.5938" y2="313.5938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="123" x="27" y="305.292">Configuring mode</text><ellipse cx="88.5" cy="137.2969" fill="#000000" filter="url(#fy64nd6fcfvpd)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><!--link *start*NotShooting to Idle--><path d="M88.5,147.3082 C88.5,155.5512 88.5,167.6866 88.5,179.0398 " fill="none" id="*start*NotShooting-Idle" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="88.5,184.1843,92.5,175.1843,88.5,179.1843,84.5,175.1843,88.5,184.1843" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Idle to Configuring--><path d="M60.2856,234.4624 C55.876,239.8723 51.9676,245.9032 49.5,252.2969 C45.3881,262.9512 49.2574,273.69 55.9065,283.0791 " fill="none" id="Idle-Configuring" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="59.1384,287.2929,56.835,277.7172,56.0954,283.3255,50.4871,282.5859,59.1384,287.2929" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="50.5" y="265.3638">EvConfig</text><!--link Configuring to Idle--><path d="M101.0692,286.9016 C103.3191,281.2384 105.3207,275.1684 106.5,269.2969 C108.4879,259.4001 106.6679,248.7922 103.54,239.2899 " fill="none" id="Configuring-Idle" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="101.7983,234.4313,101.07,244.2532,103.4856,239.138,108.6008,241.5535,101.7983,234.4313" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="107.5" y="265.3638">EvConfig</text><!--link *start to NotShooting--><path d="M101.5,28.0172 C101.5,39.4149 101.5,59.4502 101.5,82.4012 " fill="none" id="*start-NotShooting" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="101.5,87.6561,105.5,78.6561,101.5,82.6561,97.5,78.6561,101.5,87.6561" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+[*] - -> NotShooting
+
+state "Not Shooting State" as NotShooting {
+  state "Idle mode" as Idle
+  state "Configuring mode" as Configuring
+  [*] - -> Idle
+  Idle - -> Configuring : EvConfig
+  Configuring - -> Idle : EvConfig
+}
+
+note right of NotShooting : This is a note on a composite state
+@enduml
+
+PlantUML version 1.2019.01(Sat Feb 09 16:32:04 CET 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.1+13-Ubuntu-3ubuntu3.18.10.1
+Operating System: Linux
+OS Version: 4.18.0-16-generic
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>
