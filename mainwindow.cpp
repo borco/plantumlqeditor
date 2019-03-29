@@ -521,13 +521,21 @@ void MainWindow::onAssistantItemInsert(QWidget *widget)
 
 void MainWindow::onNextAssistant()
 {
-    m_assistantToolBox->setCurrentIndex((m_assistantToolBox->currentIndex() + 1) % m_assistantToolBox->count());
+    const int count = m_assistantToolBox->count();
+    if (count > 0)
+    {
+        m_assistantToolBox->setCurrentIndex((m_assistantToolBox->currentIndex() + 1) % count);
+    }
 }
 
 void MainWindow::onPrevAssistant()
 {
     const int count = m_assistantToolBox->count();
-    m_assistantToolBox->setCurrentIndex((count + m_assistantToolBox->currentIndex() - 1) % count);
+    if (count > 0)
+    {
+        // Fixed arithmetic exception (% 0).
+        m_assistantToolBox->setCurrentIndex((count + m_assistantToolBox->currentIndex() - 1) % count);
+    }
 }
 
 void MainWindow::onAssistantItemSelectionChanged()
